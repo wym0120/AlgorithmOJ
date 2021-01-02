@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.17)
+project(OJ2020)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(OJ2020 1_6.cpp 1_7.cpp)
