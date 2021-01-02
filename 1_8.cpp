@@ -13,29 +13,30 @@
  * */
 
 #include <iostream>
+
 using namespace std;
 
-long long int Pow(long long int A, long long int B, long long int C){
+long long int Pow(long long int A, long long int B, long long int C) {
     long long int result = 1;
-    A=A%C;
-    while (B>0){
-        if(B&1){
-            result = (result*A)%C;
+    A = A % C;
+    while (B > 0) {
+        if (B & 1) {
+            result = (result * A) % C;
         }
-        B>>=1;
-        A=(A*A)%C;
+        B >>= 1;
+        A = (A * A) % C;
     }
     return result;
 
 }
 
-int main(){
+int main() {
     int T;
     cin >> T;
-    while(T>0){
-        long long A,B,C;
+    while (T > 0) {
+        long long A, B, C;
         cin >> A >> B >> C;
-        cout << Pow(A,B,C) << endl;
+        cout << Pow(A, B, C) << endl;
         T--;
     }
 }

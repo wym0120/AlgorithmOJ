@@ -14,24 +14,25 @@
  * */
 
 #include <iostream>
+
 using namespace std;
 
-void CountMaxP(long p){
+void CountMaxP(long p) {
     long count = 0;
     long index = 1;
-    while (p >= 0){
+    while (p >= 0) {
         p -= index * index;
-        index ++;
-        count ++;
+        index++;
+        count++;
     }
-    count --;
+    count--;
     cout << count << endl;
 }
 
-int main(){
-    long T,P;
+int main() {
+    long T, P;
     cin >> T;
-    for (long i = 0 ; i<T;i++){
+    for (long i = 0; i < T; i++) {
         cin >> P;
         CountMaxP(P);
     }

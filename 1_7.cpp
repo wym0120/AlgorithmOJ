@@ -17,16 +17,17 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+
 using namespace std;
 
-int main(){
+int main() {
     int T, N = 0;
     cin >> T;
 
-    while (T > 0){
+    while (T > 0) {
         cin >> N;
         vector<int> v;
-        while(N>0){
+        while (N > 0) {
             int num;
             cin >> num;
             v.push_back(num);
@@ -34,18 +35,18 @@ int main(){
         }
         int i = 0;
         int sum = 0;
-        while(pow(2,i)-1 < v.size()){
+        while (pow(2, i) - 1 < v.size()) {
             int head_offset = sum;
-            int tail_offset = sum + (int)(pow(2,i));
+            int tail_offset = sum + (int) (pow(2, i));
 
-            sort(v.begin() + head_offset,min(v.begin()+tail_offset,v.end()));
-            sum += (int)(pow(2,i));
+            sort(v.begin() + head_offset, min(v.begin() + tail_offset, v.end()));
+            sum += (int) (pow(2, i));
             i++;
             std::vector<int>::iterator it;
-            for (it = v.begin()+head_offset; it != min(v.begin()+tail_offset,v.end()); ++it){
+            for (it = v.begin() + head_offset; it != min(v.begin() + tail_offset, v.end()); ++it) {
                 cout << ' ' << *it;
             }
-            cout<<endl;
+            cout << endl;
         }
         T--;
     }
