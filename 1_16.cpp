@@ -25,9 +25,10 @@ int main() {
         getline(cin, input);
         stringstream iss(input);
         vector<int> v;
-        int number;
-        while (iss >> number) {
-            v.push_back(number);
+        int number,value;
+        iss >> number;
+        while (iss >> value) {
+            v.push_back(value);
         }
         sort(v.begin(), v.end());
         stringstream s;
