@@ -35,22 +35,26 @@ int main() {
     int T;
     cin >> T;
     cin.get();
-    while (T > 0) {
+    while (T-- > 0) {
         vector<int> nums, intervals;
         ReadLineToVec(nums);
         ReadLineToVec(intervals);
         int length = nums.size();
-        for (auto it:intervals) {
-            for (int i = it; i < length; i++) {
-                for (int j = i - it; j >= 0; j -= it) {
-                    if (nums[j] > nums[j + it]) {
-                        swap(nums[j], nums[j + it]);
+        // assert(step > 0, decrease, contains 1)
+        for (int step : intervals) {
+            for (int offset = 0; offset < step; offset++) {
+                // subarr: [ off, step + off, step * 2 + off, step * 3 + off, ... ]
+                for (int i = offset; i < length; i += step) {
+                    int prev = i - step, next = i;
+                    while (prev >= 0 && nums[prev] > nums[next]) {
+                        swap(nums[prev], nums[next]);
+                        prev -= step;
+                        next -= step;
                     }
                 }
             }
         }
         printVec(nums);
-        T--;
     }
 }
 
