@@ -14,6 +14,8 @@
  * Each quadruple is unique which are separated by a delimeter "$" and are in increasing order.
  * */
 
+// 另一种实现 https://developer.aliyun.com/ask/310535
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
