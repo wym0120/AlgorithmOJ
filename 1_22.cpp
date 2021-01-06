@@ -14,7 +14,7 @@
 
 using namespace std;
 
-void ReadLineToVec(vector<int> &v) {
+void read_line_to_vec(vector<int> &v) {
     string input;
     getline(cin, input);
     stringstream iss(input);
